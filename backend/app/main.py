@@ -43,7 +43,7 @@ app.add_middleware(SecurityHeadersMiddleware)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://onrender.com",
+        "https://civicpulse-ai-1-yzw6.onrender.com/",
         "http://localhost:5173",
         "http://127.0.0.1:5173",
     ],
