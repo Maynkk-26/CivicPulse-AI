@@ -306,7 +306,7 @@ JSON OUTPUT SCHEMA:
                 region_name, category, priority_score, evidence_summary, target_language
             )
 
-        prompt = f"""Generate a concise, professional, 2-sentence policy decision reasoning for an infrastructure recommendation card.
+        prompt = f"""Generate a concise, professional, 1-sentence policy decision reasoning for an infrastructure recommendation card.
 Target Language: {target_language} (en=English, hi=Hindi, te=Telugu)
 Region: {region_name}
 Sector Category: {category}
@@ -335,7 +335,7 @@ Return ONLY the plain text reasoning in the specified target language without qu
         if not self._client:
             return await self.fallback.generate_evidence_explanation(why_recommendation, target_language)
 
-        prompt = f"""Generate a 3-sentence executive policymaker decision brief summarizing the evidence for this infrastructure priority.
+        prompt = f"""Generate a 2-sentence executive policymaker decision brief summarizing the evidence for this infrastructure priority.
 Target Language: {target_language} (en=English, hi=Hindi, te=Telugu)
 Recommendation Summary: {why_recommendation.summary}
 Confidence Score: {(why_recommendation.overall_confidence * 100):.0f}%
